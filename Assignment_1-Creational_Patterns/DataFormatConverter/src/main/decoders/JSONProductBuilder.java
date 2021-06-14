@@ -1,4 +1,4 @@
-package decoders;
+package main.decoders;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

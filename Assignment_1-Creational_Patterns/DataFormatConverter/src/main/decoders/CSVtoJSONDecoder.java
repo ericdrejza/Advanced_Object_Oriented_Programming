@@ -1,4 +1,4 @@
-package decoders;
+package main.decoders;
 
 public class CSVtoJSONDecoder extends AbstractDecoder {
 

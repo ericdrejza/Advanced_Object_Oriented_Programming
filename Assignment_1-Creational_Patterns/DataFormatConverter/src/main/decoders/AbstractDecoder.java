@@ -1,4 +1,4 @@
-package decoders;
+package main.decoders;
 
 import java.util.List;
 import java.util.Map;
