@@ -1,5 +1,10 @@
 package main.decoders;
 
+//Eric Drejza
+//Advanced Object Oriented Programming
+//6/18/2021
+//Assignment 1 - Creational Patterns
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
