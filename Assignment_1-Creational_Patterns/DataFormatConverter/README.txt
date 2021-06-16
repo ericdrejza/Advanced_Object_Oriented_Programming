@@ -3,15 +3,6 @@ Advanced Object Oriented Programming
 6/18/2021
 Assignment 1 - Creational Patterns
 
-A quick preface to this, I held off on appending the name
-of the patterns to each of my class's names because all
-of my classes are part of the two design patterns I'm using
-and I figured what's the point of using these names to
-distinguish what patterns they belong to when every class
-belongs to both patterns.  Hopefully that's alright, sorry
-if there was another reason you wanted the names appended
-other than the one I listed.
-
 Design Patterns Selected:
 Builder:
 	Director		--> CSVtoJSONDecoder
