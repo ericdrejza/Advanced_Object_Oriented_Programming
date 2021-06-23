@@ -4,6 +4,10 @@
 # Log file
 *.log
 
+# Testing Input/Output files
+**/decoders/input/
+**/decoders/output/
+
 # BlueJ files
 *.ctxt
 
