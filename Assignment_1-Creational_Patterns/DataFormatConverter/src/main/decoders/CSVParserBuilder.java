@@ -1,16 +1,17 @@
 package main.decoders;
 
+import java.io.File;
+
 //Eric Drejza
 //Advanced Object Oriented Programming
 //6/18/2021
 //Assignment 1 - Creational Patterns
 
 public class CSVParserBuilder extends ParserBuilder {
-
+	
 	@Override
-	String[][] parseData(String data) {
-		
-		String[] lines = data.split("\\n");
+	public String[][] parseData(File file) {
+		String[] lines = lineSeparator(file);
 		int num_terms = lines[0].split(",").length;
 		
 		String[][] parsedData = new String[lines.length][num_terms];

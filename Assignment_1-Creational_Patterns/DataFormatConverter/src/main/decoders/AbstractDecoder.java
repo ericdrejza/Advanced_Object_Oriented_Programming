@@ -1,5 +1,7 @@
 package main.decoders;
 
+import java.io.File;
+
 //Eric Drejza
 //Advanced Object Oriented Programming
 //6/18/2021
@@ -15,12 +17,12 @@ public abstract class AbstractDecoder {
 	abstract ParserBuilder parserBuilderFactoryMethod();
 	abstract ProductBuilder productBuilderFactoryMethod();
 	
-	public String convertDataFormat(String data) {
+	public String convertDataFormat(File file) {
 		parserBuilder = parserBuilderFactoryMethod();
-		String[][] parsedData = parserBuilder.parseData(data);
+		String[][] parsedData = parserBuilder.parseData(file);
 		
 		productBuilder = productBuilderFactoryMethod();
-		String newlyFormattedData = productBuilder.convertData(parsedData);
+		String newlyFormattedData = productBuilder.formatData(parsedData);
 		
 		return newlyFormattedData;
 	}

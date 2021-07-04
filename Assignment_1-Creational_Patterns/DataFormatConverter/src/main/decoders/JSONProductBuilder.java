@@ -14,7 +14,7 @@ import java.util.Map;
 public class JSONProductBuilder extends ProductBuilder {
 
 	@Override
-	String convertData(String[][] data) {
+	String formatData(String[][] data) {
 		if (data == null || data.length == 0) {
 			System.out.println("Data is empty");
 			return null;

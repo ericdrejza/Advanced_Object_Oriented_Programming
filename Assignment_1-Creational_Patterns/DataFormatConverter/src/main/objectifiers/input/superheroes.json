@@ -1,0 +1,22 @@
+[
+	{
+		"hero": "Spider-Man",
+		"secret identity": "Peter Parker",
+		"universe": "Marvel"
+	},
+	{
+		"hero": "Batman",
+		"secret identity": "Bruce Wayne",
+		"universe": "DC"
+	},
+	{
+		"hero": "Superman",
+		"secret identity": "Clark Kent / Kal-El",
+		"universe": "DC"
+	},
+	{
+		"hero": "Wolverine",
+		"secret identity": "Logan",
+		"universe": "Marvel"
+	}
+]
