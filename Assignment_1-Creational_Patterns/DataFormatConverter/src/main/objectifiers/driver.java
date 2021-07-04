@@ -64,26 +64,28 @@ public class driver {
 				
 				// Print newly output data
 				System.out.println("\n\nOutput (json with " + imp + " Implementation):\n\n" + json_out + "\n\n");				
+
+				
+//				// Save json_out to .json file 
+//				File selectedSaveFile = chooseFile("save",
+//						selectedSourceFile.toPath().getParent().toString(),
+//						selectedSourceFile.getName().replace("input", "output"));
+//				
+//				
+//				if (selectedSaveFile != null) {
+//					try {
+//						FileWriter writer = new FileWriter(selectedSaveFile);
+//						writer.write(json_out);
+//						writer.flush();
+//						writer.close();
+//					} catch (IOException e) {
+//						// TODO Auto-generated catch block
+//						System.out.println(e.getMessage());
+//						e.printStackTrace();
+//					}
+//				}
 			}
 			
-//			// Save json_out to .json file 
-//			File selectedSaveFile = chooseFile("save",
-//					selectedSourceFile.toPath().getParent().toString(),
-//					selectedSourceFile.getName().replace("input", "output"));
-			
-			
-//			if (selectedSaveFile != null) {
-//				try {
-//					FileWriter writer = new FileWriter(selectedSaveFile);
-//					writer.write(json_out);
-//					writer.flush();
-//					writer.close();
-//				} catch (IOException e) {
-//					// TODO Auto-generated catch block
-//					System.out.println(e.getMessage());
-//					e.printStackTrace();
-//				}
-//			}
 		}
 	}
 
