@@ -1,0 +1,11 @@
+[
+	{
+		"hero": "Spider-Man",
+		"secret identity": "Peter Parker",
+		"age" : 17
+	},
+	{
+		"hero": "Batman",
+		"secret identity": "Bruce Wayne"
+	}
+]

@@ -1,9 +1,9 @@
-package main.decoders;
+package main.objectifiers;
 
 //Eric Drejza
 //Advanced Object Oriented Programming
-//6/18/2021
-//Assignment 1 - Creational Patterns
+//7/2/2021
+//Assignment 2 - Structural Patterns
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,11 +23,11 @@ public class driver {
 				+ "Rowan University\\Advanced Object Oriented Programming\\"
 				+ "Advanced_Object_Oriented_Programming_Assignments\\"
 				+ "Assignment_1-Creational_Patterns\\DataFormatConverter\\"
-				+ "src\\main\\decoders\\input";
+				+ "src\\main\\objectifiers\\input";
 		
-		CSVtoJSONDecoder decoder = new CSVtoJSONDecoder();
-		String csvInputData = "";
+		String jsonInputData = "";
 		File selectedSourceFile = chooseFile("open", suggestedDirectory, "");
+//		File selectedSourceFile = new File(suggestedDirectory.toString()+"\\superheroes.json");
 		System.out.println(selectedSourceFile.getAbsolutePath());
 		
 		// Read input data
@@ -35,7 +35,7 @@ public class driver {
 			try {
 				Scanner scnr = new Scanner(selectedSourceFile);
 				while(scnr.hasNextLine()) {
-					csvInputData = csvInputData + scnr.nextLine() + "\n";
+					jsonInputData = jsonInputData + scnr.nextLine() + "\n";
 				}
 				scnr.close();
 			}
@@ -45,31 +45,45 @@ public class driver {
 			}	
 			
 			// Print input data
-			System.out.println("Input (csv):\n\n" + csvInputData + "\n");
+			System.out.println("Input (JSON):\n\n" + jsonInputData + "\n");
 			
-			// Decoder converts data format
-			String json_out = decoder.convertDataFormat(selectedSourceFile);
+			String[] impOptions = new String[] {"Composite", "Decorator"};
 			
-			// Print newly formatted output data
-			System.out.println("Output (json):\n\n" + json_out);
 			
-			// Save json data to .json file 
-			File selectedSaveFile = chooseFile("save",
-					selectedSourceFile.toPath().getParent().toString(),
-					selectedSourceFile.getName().replace(".csv", ".json"));
+			// Instantiate JSONObjectifier
+			JSONObjectifier jsonObjectifier = new JSONObjectifier();
 			
-			if (selectedSaveFile != null) {
-				try {
-					FileWriter writer = new FileWriter(selectedSaveFile);
-					writer.write(json_out);
-					writer.flush();
-					writer.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					System.out.println(e.getMessage());
-					e.printStackTrace();
-				}
+			// Loop through implementations and print outputs
+			for (String imp : impOptions) {
+				// Set implementation
+				jsonObjectifier.setImp(imp);
+				
+				// Objectifier objectifies
+				jsonObjectifier.objectify(selectedSourceFile);
+				String json_out = jsonObjectifier.toString();
+				
+				// Print newly output data
+				System.out.println("\n\nOutput (json with " + imp + " Implementation):\n\n" + json_out + "\n\n");				
 			}
+			
+//			// Save json_out to .json file 
+//			File selectedSaveFile = chooseFile("save",
+//					selectedSourceFile.toPath().getParent().toString(),
+//					selectedSourceFile.getName().replace("input", "output"));
+			
+			
+//			if (selectedSaveFile != null) {
+//				try {
+//					FileWriter writer = new FileWriter(selectedSaveFile);
+//					writer.write(json_out);
+//					writer.flush();
+//					writer.close();
+//				} catch (IOException e) {
+//					// TODO Auto-generated catch block
+//					System.out.println(e.getMessage());
+//					e.printStackTrace();
+//				}
+//			}
 		}
 	}
 
