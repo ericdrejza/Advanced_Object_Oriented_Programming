@@ -11,3 +11,8 @@ at DataFormatConverter/src/main/decoders/README.txt
 Assignment 2:
 For details on assignment 2 - structural patterns, refer to the README.txt file
 at DataFormatConverter/src/main/objectifiers/README.txt
+
+
+Assignment 3:
+For details on assignment 3 - behavioral patterns, refer to the README.txt file
+at DataFormatConverter/src/main/dialogs/README.txt
