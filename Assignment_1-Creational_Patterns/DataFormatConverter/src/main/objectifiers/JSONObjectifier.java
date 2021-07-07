@@ -2,12 +2,12 @@ package main.objectifiers;
 
 public class JSONObjectifier extends Objectifier {
 	
-	JSONObjectifier(){
+	public JSONObjectifier(){
 		super();
 		imp = null;
 	}
 	
-	JSONObjectifier(String imp){
+	public JSONObjectifier(String imp){
 		setImp(imp);
 	}
 	

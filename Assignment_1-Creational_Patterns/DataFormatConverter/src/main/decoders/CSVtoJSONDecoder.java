@@ -7,6 +7,8 @@ package main.decoders;
 
 public class CSVtoJSONDecoder extends AbstractDecoder {
 
+	public CSVtoJSONDecoder() {}
+	
 	@Override
 	ParserBuilder parserBuilderFactoryMethod() {
 		return new CSVParserBuilder();
