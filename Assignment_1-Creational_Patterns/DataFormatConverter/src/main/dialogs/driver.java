@@ -56,9 +56,6 @@ public class driver {
 			tempFile = new File(inputFile.getName().replace(".csv", ".tmp"));
 			tempFile.deleteOnExit();
 
-		    // print path
-		    System.out.println(tempFile.getAbsolutePath());
-
 		    dialog.setStrategy(new StringHandlerFileSaveStrategy(tempFile));
 		    dialog.getStrategy().handleString(json_output);
 			
@@ -79,11 +76,11 @@ public class driver {
 				dialog.setStrategy(new StringHandlerFileSaveStrategy(dialog.getFile()));
 			}
 			((StringHandlerFileSaveStrategy) dialog.getStrategy()).setFile(dialog.getFile());
-			dialog.getStrategy().handleString(dialog.getObjectifier().toString());;
+			dialog.getStrategy().handleString(((JSONObjectifierDecoratorImp)dialog.getObjectifier().getImp()).toStringWithIterator());
 		}
 		if (print) {
 			dialog.setStrategy(new StringHandlerPrintStrategy());
-			dialog.getStrategy().handleString(dialog.getObjectifier().toString());
+			dialog.getStrategy().handleString(((JSONObjectifierDecoratorImp)dialog.getObjectifier().getImp()).toStringWithIterator());
 		}
 
 	}

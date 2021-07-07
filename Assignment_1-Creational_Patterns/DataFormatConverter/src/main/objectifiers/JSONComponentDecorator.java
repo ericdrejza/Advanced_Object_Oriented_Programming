@@ -8,4 +8,8 @@ public abstract class JSONComponentDecorator {
 	public void setContent(String string) {
 		this.content = string;
 	}
+	
+	public String getContent() {
+		return content;
+	}
 }

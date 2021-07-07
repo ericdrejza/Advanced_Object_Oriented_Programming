@@ -2,6 +2,8 @@ package main.objectifiers;
 
 import java.io.File;
 
+import main.objectifiers.iterators.DecoratorIterator;
+
 public class JSONObjectifierDecoratorImp extends JSONObjectifierImp {
 	private JSONComponentDecorator component;
 	
@@ -50,5 +52,15 @@ public class JSONObjectifierDecoratorImp extends JSONObjectifierImp {
 	@Override
 	public String toString() {
 		return component.toString();
+	}
+	
+	public String toStringWithIterator() {
+		String result = "";
+		DecoratorIterator iter = new DecoratorIterator(component);
+		while(iter.hasNext()) {
+			iter.next();
+			result = iter.currentItem().getContent() + "\n" + result;
+		}
+		return result;
 	}
 }

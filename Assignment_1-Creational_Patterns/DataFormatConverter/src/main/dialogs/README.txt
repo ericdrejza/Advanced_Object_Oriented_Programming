@@ -4,17 +4,20 @@ Advanced Object Oriented Programming
 Assignment 3 - Behavioral Patterns
 
 Structural Design Patterns Selected:
+
 Strategy:
+(seen in main.dialog and main.string_handlers packages)
 	Context				--> DataFormatDialogMediator
 	Strategy			--> StringHandlerStrategy
 	ConcreteStratgey	-->	StringHandlerPrintStrategy,
 							StringHandlerFileSaveStrategy 
 
-Mediator:
-	Mediator			--> JSONComponentComposite
-	ConcreteMediator	--> JSONMapComposite, JSONArrayComposite, JSONKeyComposite
-	Colleague			-->	Object (Hopefully I'm not breaking pattern by using Object)
-	ConcreteColleague	--> JSONObjectifier, CSVtoJSONDecoder, StringHandlerStrategy
+Iterator: (Kinda deviates from the pattern, but it's an iterator nonetheless.)
+(seen in main.objectifiers.iterators package)
+	Aggregate			--> JSONComponentDecorator
+	ConcreteAggregate	--> JSONLine, JSONNewLineDecorator
+	Iterator			-->	Iterator
+	ConcreteIterator	--> DecoratorIterator
 	
 
 Usage:
@@ -31,5 +34,9 @@ This will open a file dialog for you to select your input file.
 Once you have selected your input file, click the "Open" button on the dialog window.
 
 If the file is in csv format, it will be converted to json, then the either the newly converted json
-or the original json input data will be objectified and then either printed out or saved based on
-your arguments ("print" and/or "save" passed to the main method).
+or the original json input data will be objectified and then either printed out and/or saved based on
+your arguments "print" and/or "save" passed to the main method.
+
+The current driver being used uses the JSONObjectifierDecoratorImp to work with the new iterator
+I created as part of the Iterator pattern, and the two options for printing and saving are done
+using the Strategy pattern.

@@ -15,6 +15,10 @@ public abstract class Objectifier {
 		objectify();
 	}
 	
+	public ObjectifierImp getImp() {
+		return imp;
+	}
+	
 	public void setFile(File file) {
 		this.file = file;
 	}
